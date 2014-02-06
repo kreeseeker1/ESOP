@@ -20,6 +20,7 @@ class ESOP(wx.Frame):
         kwds["style"] = wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.label_1 = wx.StaticText(self, wx.ID_ANY, _("This is a test question for the program to use to fill up space"))
+        self.label_1.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL, wx.BOLD))
         self.radio_btn_3 = wx.RadioButton(self, wx.ID_ANY, _("1"))
         self.radio_btn_4 = wx.RadioButton(self, wx.ID_ANY, _("2"))
         self.radio_btn_5 = wx.RadioButton(self, wx.ID_ANY, _("3"))
@@ -36,10 +37,10 @@ class ESOP(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: ESOP.__set_properties
-        self.SetTitle(_("esop1"))
+        self.SetTitle(_("Evergreen Sustainability Outreach Project "))
         self.SetSize((627, 250))
         self.SetBackgroundColour(wx.Colour(25, 255, 5))
-        self.SetFont(wx.Font(12, wx.DEFAULT, wx.NORMAL, wx.BOLD, 0, ""))
+        self.SetFont(wx.Font(20, wx.DEFAULT, wx.NORMAL, wx.BOLD, 0, ""))
         self.label_1.SetMinSize((611, 75))
         self.label_1.SetBackgroundColour(wx.Colour(175, 255, 216))
         self.radio_btn_3.SetMinSize((75, 26))
@@ -72,6 +73,7 @@ class ESOP(wx.Frame):
         sizer_1.Add(self.button_1, 0, wx.TOP | wx.ALIGN_CENTER_HORIZONTAL, 11)
         sizer_1.Add(self.panel_1, 1, wx.EXPAND, 0)
         self.SetSizer(sizer_1)
+        
         self.Layout()
         # end wxGlade
 
@@ -79,6 +81,7 @@ class ESOP(wx.Frame):
 class Esop(wx.App):
     def OnInit(self):
         wx.InitAllImageHandlers()
+        
         esopFrame = ESOP(None, wx.ID_ANY, "")
         self.SetTopWindow(esopFrame)
         esopFrame.Show()
